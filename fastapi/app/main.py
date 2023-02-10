@@ -8,4 +8,4 @@ api_response = requests.get(endpoint,headers={'Authorization': 'Bearer eyJ4NXQiO
 
 @app.get("/")
 def hello_world():
-    return {"message": api_response.result}
+    return {"message": api_response}
