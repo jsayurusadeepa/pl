@@ -1,4 +1,4 @@
 cpython
-bs4
+matplotlib
 fastapi
 uvicorn
