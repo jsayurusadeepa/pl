@@ -8,7 +8,4 @@ r = requests.get(endpoint, headers=headers)
 @app.get("/")
 def hello_world():
     df = pd.DataFrame(r.json()['items'])
-    text_file = open("index.html", "w")
-    text_file.write(df.to_html())
-    text_file.close()
-    return {"Message":"OK"}
+    return HTML(df.to_html())
