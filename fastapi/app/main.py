@@ -8,18 +8,5 @@ r = requests.get(endpoint, headers=headers)
 @app.get("/")
 def hello_world():
     df = pd.DataFrame(r.json()['items'])
-    html_string = '''
-                        <html>
-                            <head>
-                              <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-                              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-                              <style>body{ margin:0 100; background:whitesmoke; }</style>
-                            </head>
-                            <body>
-                              <h1>Monthly Report</h1>
-                              ''' + '''
-                            </body>
-                        </html>'''
-    with open("nick.html", 'w') as f:
-        f.write(html_string)
+    df.to_html(classes='table table-stripped')
     return {"Message":"OK"}
