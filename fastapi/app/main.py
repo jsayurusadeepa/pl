@@ -1,6 +1,6 @@
 import requests
 from fastapi import FastAPI
-import pandas as pd
+import numpy as np 
 import matplotlib.pyplot as plt
 app = FastAPI()
 endpoint = "https://dc0c7b7d-7fbd-4b52-9d73-ad40481e374f-dev.e1-us-east-azure.choreoapis.dev/qvaq/ordsgeneratedapiforpl/1.0.0/stud"
@@ -8,8 +8,19 @@ headers = {'Authorization': 'Bearer eyJ4NXQiOiJZV1kxTm1Sa1pHSTVNekU0T0RCbFpEUmlN
 r = requests.get(endpoint, headers=headers)
 @app.get("/")
 def hello_world():
-    s = pd.Series([1, 2, 3])
-    fig, ax = plt.subplots()
-    s.plot.bar()
-    fig.savefig('my_plot.png')
+    x = np.arange(0,10) 
+    y = x ^ 2 
+    #Labeling the Axes and Title
+    plt.title("Graph Drawing") 
+    plt.xlabel("Time") 
+    plt.ylabel("Distance") 
+
+    # Formatting the line colors
+    plt.plot(x,y,'r')
+
+    # Formatting the line type  
+    plt.plot(x,y,'>') 
+
+    # save in pdf formats
+    plt.savefig('timevsdist.pdf', format='pdf')
     return {"Message":"OK"}

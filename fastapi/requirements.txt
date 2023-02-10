@@ -1,6 +1,5 @@
 cpython
 matplotlib
-pyplot
 pandas
 fastapi
 uvicorn
