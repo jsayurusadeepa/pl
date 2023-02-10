@@ -1,2 +1,0 @@
-FROM mysql:latest
-docker run --hostname=e5edfd855043 --mac-address=02:42:ac:11:00:02 --env=MYSQL_ROOT_PASSWORD=my-secret-pw --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin --env=GOSU_VERSION=1.16 --env=MYSQL_MAJOR=8.0 --env=MYSQL_VERSION=8.0.32-1.el8 --env=MYSQL_SHELL_VERSION=8.0.32-1.el8 --volume=/my/own/datadir:/var/lib/mysql --volume=/var/lib/mysql --restart=no --runtime=runc -d sayzsad/pl:latest
