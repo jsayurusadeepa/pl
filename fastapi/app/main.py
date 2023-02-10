@@ -7,5 +7,4 @@ headers = {'Authorization': 'Bearer eyJ4NXQiOiJZV1kxTm1Sa1pHSTVNekU0T0RCbFpEUmlN
 r = requests.get(endpoint, headers=headers)
 @app.get("/")
 def hello_world():
-    for item in context.query([r.json()]):
-    return item['pl_stud_id']
+    return {"Message":r.json()}
