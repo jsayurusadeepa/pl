@@ -12,4 +12,4 @@ def hello_world():
     fig, ax = plt.subplots()
     s.plot.bar()
     fig.savefig('my_plot.png')
-    return '<img src='my_plot.png'/>'
+    return '<html><header>Test Data</header><body><img src='my_plot.png'/></body></html>'
