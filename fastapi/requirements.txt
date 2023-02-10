@@ -1,3 +1,2 @@
-cpython
 fastapi
 uvicorn
