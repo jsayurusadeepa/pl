@@ -8,6 +8,6 @@ r = requests.get(endpoint, headers=headers)
 @app.get("/")
 def hello_world():
     df = pd.DataFrame(r.json()['items'])
-with open("test.html", 'w') as f:
-    f.write(df.to_html(classes='table table-stripped'))
+    with open("test.html", 'w') as f:
+        f.write(df.to_html(classes='table table-stripped'))
     return {"Message":"OK"}
