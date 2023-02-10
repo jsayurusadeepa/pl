@@ -1,4 +1,5 @@
-import urllib.requests
+import requests
+import json
 from fastapi import FastAPI
 app = FastAPI()
 endpoint = "https://dc0c7b7d-7fbd-4b52-9d73-ad40481e374f-dev.e1-us-east-azure.choreoapis.dev/qvaq/ordsgeneratedapiforpl/1.0.0/stud"
