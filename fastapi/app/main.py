@@ -8,4 +8,4 @@ r = requests.get(endpoint, headers=headers)
 df = pd.DataFrame(r.json()['items'])
 @app.get("/")
 def hello_world():
-    return r.json()
+    return df
