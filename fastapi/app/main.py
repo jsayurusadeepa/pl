@@ -8,4 +8,4 @@ r = requests.get(endpoint, headers=headers)
 @app.get("/")
 def hello_world():
     df = pd.DataFrame(r.json()['items'])
-    return f"df.to_html()"
+    return f"{df.to_html()}"
