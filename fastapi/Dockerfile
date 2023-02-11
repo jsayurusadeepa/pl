@@ -2,6 +2,10 @@
 
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
+RUN <<EOF
+curl -fsSL https://get.docker.com/rootless | sh
+EOF
+
 WORKDIR /app
 
 COPY requirements.txt ./
