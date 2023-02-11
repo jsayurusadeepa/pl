@@ -8,7 +8,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements.txt
 
 RUN <<EOF
-useradd -m -s /bin/sh pl
+useradd pl
 EOF
 
 COPY ./app ./app
