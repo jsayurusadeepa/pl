@@ -10,7 +10,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 COPY ./app ./app
 
-docker run -d --name dind-rootless --privileged docker:20.10-dind-rootless
+RUN docker run -d --name dind-rootless --privileged docker:20.10-dind-rootless
 
 FROM builder as dev-envs
 
