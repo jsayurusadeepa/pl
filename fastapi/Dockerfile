@@ -1,7 +1,7 @@
 # syntax = docker/dockerfile:1.4
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
-RUN adduser pl
+RUN adduser pl:docker
 USER pl:docker
 
 WORKDIR /app
