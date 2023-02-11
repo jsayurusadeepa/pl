@@ -8,8 +8,10 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements.txt
+	
 useradd -m -s /bin/sh pl | sh
 su pl | sh
+
 COPY ./app ./app
 
 FROM builder as dev-envs
