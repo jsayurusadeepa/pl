@@ -1,7 +1,8 @@
 # syntax = docker/dockerfile:1.4
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
-RUN curl -fsSL https://get.docker.com/rootless | sh | docker context use rootless
+RUN curl -fsSL https://get.docker.com/rootless | sh
+docker context use rootless
 WORKDIR /app
 
 COPY requirements.txt ./
