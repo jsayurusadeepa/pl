@@ -10,11 +10,11 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 COPY ./app ./app
 
-FROM builder as dev-envs
-
 RUN <<EOF
 docker run -d --name dind-rootless --privileged docker:20.10-dind-rootless
 EOF
+
+FROM builder as dev-envs
 
 RUN <<EOF
 apt-get update
