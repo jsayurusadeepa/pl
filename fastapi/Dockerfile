@@ -2,8 +2,6 @@
 
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
-useradd -m -s /bin/sh pl12345
-
 WORKDIR /app
 
 COPY requirements.txt ./
