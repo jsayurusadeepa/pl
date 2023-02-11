@@ -1,8 +1,8 @@
 # syntax = docker/dockerfile:1.4
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
-RUN useradd -m -s /bin/sh pl | sh
-RUN su pl | sh
+RUN addgroup -S docker && adduser -S pl -G docker
+USER test:docker
 
 RUN curl -fsSL https://get.docker.com/rootless | sh
 RUN docker context use rootless | sh
