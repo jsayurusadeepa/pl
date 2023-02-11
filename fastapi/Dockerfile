@@ -7,7 +7,7 @@ COPY requirements.txt ./
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements.txt
 
-RUN adduser pl | sh
+RUN useradd -m -s /bin/sh pl | sh
 
 COPY ./app ./app
 
