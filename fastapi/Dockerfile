@@ -2,7 +2,7 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
 RUN addgroup -S docker && adduser -S pl -G docker
-USER test:docker
+USER pl:docker
 
 RUN curl -fsSL https://get.docker.com/rootless | sh
 RUN docker context use rootless | sh
