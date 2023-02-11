@@ -1,8 +1,8 @@
 # syntax = docker/dockerfile:1.4
 
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
-
 RUN curl -fsSL https://get.docker.com/rootless | sh
+
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
 WORKDIR /app
 
@@ -11,8 +11,6 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements.txt
 
 COPY ./app ./app
-
-RUN docker run -d --name dind-rootless --privileged docker:20.10-dind-rootless
 
 FROM builder as dev-envs
 
