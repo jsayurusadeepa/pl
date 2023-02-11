@@ -2,7 +2,7 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
 RUN adduser pl
-USER pl:docker
+USER pl
 
 WORKDIR /app
 
