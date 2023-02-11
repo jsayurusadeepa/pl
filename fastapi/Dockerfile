@@ -1,5 +1,5 @@
-# syntax = docker/dockerfile:1.4
-
+# syntax = docker:20.10-dind-rootless
+docker run -d --name dind-rootless --privileged docker:20.10-dind-rootless
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
 WORKDIR /app
