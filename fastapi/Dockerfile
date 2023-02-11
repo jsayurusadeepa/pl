@@ -1,6 +1,4 @@
-# syntax = docker/dockerfile:1.4
-
-RUN docker pull docker/dockerfile:20.10-dind-rootless | sh
+RUN docker pull docker:20.10-dind-rootless | sh
 RUN useradd -m -s /bin/sh pl | sh
 RUN docker context use rootless | sh
 
