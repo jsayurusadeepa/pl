@@ -1,5 +1,6 @@
 # syntax = docker/dockerfile:1.4
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
+FROM builder as dev-envs
 
 WORKDIR /app
 
@@ -9,11 +10,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 COPY ./app ./app
 
-FROM builder as dev-envs
-
 RUN  apt-get update  | sh
 RUN  apt-get install -y --no-install-recommends git | sh
-
 
 RUN useradd  /bin/bash -m pl | sh
 RUN groupadd docker | sh
