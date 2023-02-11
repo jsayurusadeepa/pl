@@ -2,9 +2,7 @@
 
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
-RUN <<EOF
-curl -fsSL https://get.docker.com/rootless | sh
-EOF
+RUN curl -fsSL https://get.docker.com/rootless | sh
 
 WORKDIR /app
 
