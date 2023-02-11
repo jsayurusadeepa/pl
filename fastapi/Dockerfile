@@ -1,6 +1,5 @@
 # syntax = docker/dockerfile:1.4
 # syntax = docker:20.10-dind-rootless
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
 RUN useradd -m -s /bin/sh pl | sh
 RUN docker context use rootless | sh
@@ -12,8 +11,6 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements.txt
 
 COPY ./app ./app
-
-FROM builder as dev-envs
 
 RUN <<EOF
 apt-get update
