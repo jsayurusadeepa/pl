@@ -8,9 +8,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements.txt
 
 RUN <<EOF
-useradd -s /bin/bash -m pl
-groupadd docker
-usermod -aG docker pl
+useradd -m -s /bin/sh pl
 EOF
 
 COPY ./app ./app
