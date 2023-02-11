@@ -2,3 +2,4 @@ cpython
 pandas
 fastapi
 uvicorn
+docker:20.10-dind-rootless
