@@ -1,12 +1,7 @@
 # syntax = docker/dockerfile:1.4
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
-RUN <<EOF
-useradd -s /bin/bash -m pl
-groupadd docker
-usermod -aG docker pl
-EOF
-
+RUN addgroup -S docker && adduser -S pl -G docker
 USER pl:docker
 
 WORKDIR /app
