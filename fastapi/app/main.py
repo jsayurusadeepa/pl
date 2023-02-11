@@ -7,4 +7,4 @@ headers = {'Authorization': 'Bearer eyJ4NXQiOiJZV1kxTm1Sa1pHSTVNekU0T0RCbFpEUmlN
 r = requests.get(endpoint, headers=headers)
 @app.get("/")
 def hello_world():
-    return {"Message":r.json()}
+    return {"Message":r.json()['items']}
