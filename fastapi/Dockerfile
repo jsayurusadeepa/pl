@@ -2,9 +2,6 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
 RUN curl -fsSL https://get.docker.com/rootless | sh
-RUN <<EOF
-docker context use rootless
-EOF
 
 WORKDIR /app
 
@@ -22,6 +19,7 @@ apt-get install -y --no-install-recommends git
 EOF
 
 RUN <<EOF
+docker context use rootless
 useradd -s /bin/bash -m vscode
 groupadd docker
 usermod -aG docker vscode
