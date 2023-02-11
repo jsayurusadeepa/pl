@@ -2,6 +2,7 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
 
 RUN useradd -m -s /bin/sh pl | sh
+RUN docker context use rootless | sh
 
 WORKDIR /app
 
