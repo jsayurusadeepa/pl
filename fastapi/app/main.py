@@ -9,5 +9,5 @@ r = requests.get(endpoint, headers=headers)
 
 @app.get("/")
 def hello_world():
-    r1 = requests.post(endpoint1, r.json()['items'])
+    r1 = requests.post(endpoint1, r.json()['items'], headers={})
     return {"Message":"OK..."}
