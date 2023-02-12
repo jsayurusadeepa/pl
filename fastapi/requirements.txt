@@ -1,4 +1,5 @@
 cpython
 pandas
 fastapi
+urllib
 uvicorn
