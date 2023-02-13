@@ -8,7 +8,7 @@ headers = {'Authorization':'Bearer eyJ4NXQiOiJZV1kxTm1Sa1pHSTVNekU0T0RCbFpEUmlNV
 url = 'https://www.w3schools.com/python/demopage.php'
 myobj = {'somekey': 'somevalue'}
 payload = {"pl_stud_id":"10045","pl_stud_name":"TF1HQ0ENMV","pl_student_marks":87.06113000085513}
-r1 = requests.post(endpoint1, json=payload)
 @app.get("/")
 def hello_world():
+    r1 = requests.post(endpoint1, json=payload)
     return {"Message":"OK"}
