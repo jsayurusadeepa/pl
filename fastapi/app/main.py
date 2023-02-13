@@ -8,5 +8,5 @@ headers = {'Authorization':'Bearer eyJ4NXQiOiJZV1kxTm1Sa1pHSTVNekU0T0RCbFpEUmlNV
 r = requests.get(endpoint, headers=headers)
 @app.get("/")
 def hello_world():
-    a = requests.post(endpoint1, r.json()['items'])
+    a = requests.post(endpoint1, (r.json()['items']).replace("[", ""))
     return {"Message":"OK"}
